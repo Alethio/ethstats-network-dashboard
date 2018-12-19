@@ -1,0 +1,81 @@
+.filter-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  cursor: pointer;
+
+  .icon {
+    font-size: 12px;
+    color: $text-color;
+    opacity: 0.5;
+    transition: opacity $transition-time $transition-easing;
+  }
+
+  .label {
+    padding-left: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: 0.4px;
+    opacity: 0.5;
+    transition: opacity $transition-time $transition-easing;
+  }
+
+  &:hover, &:focus {
+    .icon, .label {
+      opacity: 1;
+    }
+  }
+
+  .popup-container {
+    position: absolute;
+    top: -22px;
+    left: -20px;
+    padding-left: 14px;
+    width: 185px;
+    background-color: $line-color;
+    border-radius: 0 0 6px 6px;
+    z-index: 999;
+
+    .icon, .label {
+      opacity: 1;
+    }
+
+    .header-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 22px 0 6px;
+    }
+
+    .filter-popup-content {
+      .icon {
+        color: $white;
+      }
+    }
+
+    .actions {
+      .blue-btn {
+        margin: 20px 20px 0 0!important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+      }
+
+      .transparent-btn {
+        background-color: transparent;
+        color: $blue;
+        font-weight: 600;
+        text-align: center;
+        margin: 15px 20px 0 0;
+        opacity: 0.7;
+        transition: opacity $transition-easing $transition-time;
+
+        &:hover, &:focus {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

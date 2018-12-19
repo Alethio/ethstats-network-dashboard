@@ -1,0 +1,28 @@
+.dummyTx {
+
+  .type-selector {
+    display: flex;
+    flex-direction: row;
+
+    .type {
+      margin: 5px 10px;
+      cursor: pointer;
+    }
+  }
+
+  .flex-row {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid $line-color;
+
+    .label {
+      width: 25%;
+      padding: 5px;
+    }
+    .value {
+      padding: 5px 0;
+      width: 75%;
+      word-break: break-all;
+    }
+  }
+}

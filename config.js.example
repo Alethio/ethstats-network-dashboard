@@ -1,0 +1,7 @@
+const config = {
+  NETSTATS_API_URL: 'http://127.0.0.1:3030',
+  DS_URL: '127.0.0.1:6020',
+  DS_USER: 'frontend',
+  DS_PASS: '',
+  DS_NAMESPACE: 'ethstats/'
+};

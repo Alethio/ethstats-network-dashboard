@@ -1,0 +1,68 @@
+.button {
+  background-color: $blue;
+  border-radius: 2px;
+  border: none;
+  color: $white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $main-font;
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.9rem;
+  outline: none;
+  padding: 0.6rem 1rem 0.5rem;
+  position: relative;
+  text-decoration: none;
+  transition: background-color $transition-time $transition-easing;
+
+  &.not-found {
+    font-size: 1.6rem;
+  }
+  &:hover, &:focus {
+    outline: none;
+    background-color: darken($blue, 5);
+  }
+
+  &:active {
+    top: 1px;
+  }
+
+  &.link {
+    padding: 0;
+
+    a {
+      display: block;
+      padding: 0.6rem 1rem 0.5rem;
+      color: $white;
+
+      &:hover,
+      &:focus {
+        color: $white;
+      }
+    }
+  }
+}
+.btn-group {
+  &.flex {
+    display: flex;
+    justify-content: space-between;
+  }
+  button {
+    background-color: $blue;
+    border-radius: 2px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    float: left;
+    font-family: $main-font;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 10px 24px;
+    &:not(:last-child) {
+      border-right: none;
+    }
+    &:hover {
+      background-color: darken($blue, 5);
+    }
+  }
+}

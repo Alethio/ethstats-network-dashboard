@@ -1,0 +1,28 @@
+/** Variables **/
+
+$black: #101220;
+$white: #FFFFFF;
+$grey_v1: #6B6B76;
+$gray_v2: rgba(#4F5054, 0.7);
+$grey_v3: rgba(#1A222F, 0.7);
+
+$teal: #50E9D3;
+$blue: #2774FE;
+$darkBlue: #0f1927;
+$red: #EF6C6C;
+$green: #4AC563;
+$yellow: #EADA42;
+$orange: #F1CA5C;
+
+$text-color: #8399B8;
+$link-color: $blue;
+$link-hover: lighten($link-color, 10);
+$line-color: #324156;
+
+$main-font: 'HelveticaNeue', Helvetica, Arial, sans-serif;
+$secondary-font: Helvetica, Arial, sans-serif;
+
+$transition-easing: linear;
+$transition-time: 0.2s;
+
+$footer-size: 60px;

@@ -1,0 +1,67 @@
+.grid {
+  display: flex;
+  flex-direction: column;
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    margin: 0 -1rem;
+  }
+
+  .column {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+
+    &.one {
+      width: 8.333333333%;
+    }
+    &.two {
+      width: 16.666666667%;
+    }
+    &.three {
+      width: 25%;
+    }
+    &.four {
+      width: 33.333333333%;
+    }
+    &.five {
+      width: 41.666666667%;
+    }
+    &.six {
+      width: 50%;
+    }
+    &.seven {
+      width: 58.333333333%;
+    }
+    &.eight {
+      width: 66.666666667%;
+    }
+    &.nine {
+      width: 75%;
+    }
+    &.ten {
+      width: 83.333333333%;
+    }
+    &.eleven {
+      width: 91.666666667%;
+    }
+    &.twelve {
+      width: 100%;
+    }
+  }
+
+  &.one {
+    .column {
+      width: 100%;
+    }
+  }
+
+  &.two {
+    .column {
+      width: 50%;
+    }
+  }
+}

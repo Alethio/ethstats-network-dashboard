@@ -1,0 +1,119 @@
+
+  .flex-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-left: 10px;
+    overflow: hidden;
+  }
+  .date-container {
+    text-align: right;
+    //margin: 0 0 0 30px;
+    margin: 20px 10px 20px 0;
+    width: 30%;
+    min-width: 100px;
+    .time-ago {
+      color: #8399B8;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 0.37px;
+      line-height: 18px;
+    }
+    .date {
+      color: #324156;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 0.4px;
+      line-height: 18px;
+      margin-top: 10px;
+    }
+  }
+
+  .timeline-block {
+    position: relative;
+    overflow: visible;
+    padding: 20px 0 20px 30px;
+    width: 50%;
+    .background {
+      position: absolute;
+      top: 0;
+      left: 10px;
+      bottom: 0;
+      right: -1300px;
+      border-left: 1px solid $line-color;
+      opacity: 0.7;
+    }
+
+    .bullet {
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      top: 21.5px;
+      left: 3px;
+      border-radius: 50%;
+      border: 2px solid $line-color;
+      background-color: $darkBlue;
+
+      .inner-circle {
+        position: absolute;
+        //border: 2px solid #324156;
+        background-color: $blue;
+        border-radius: 50%;
+        width: 5px;
+        height: 5px;
+        top: 3px;
+        left: 3px
+      }
+    }
+    .content {
+      position: relative;
+      z-index: 30;
+
+      display: flex;
+      flex-direction: row;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 18px;
+      letter-spacing: 0.37px;
+      justify-content: space-between;
+      max-width: 220px;
+
+      .action-container {
+        .info {
+          margin-top: 10px;
+        }
+      }
+
+      .action-type {
+        color: #FFFFFF;
+        font-size: 16px;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+        line-height: 18px;
+      }
+
+      .action-value {
+        &:nth-child(1) {
+          color: $teal;
+        }
+        &:nth-child(2) {
+          color: $yellow;
+        }
+        //&:nth-child(3) {
+        // color: $red;
+        //}
+      }
+    }
+  }
+
+  .extra-data {
+    margin-top: 10px;
+    font-size: 12px;
+    .key {
+      color: #324156;
+    }
+    .value {
+      color: #324156;
+    }
+  }
+

@@ -1,0 +1,227 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?3h71nb');
+  src:  url('fonts/icomoon.eot?3h71nb#iefix') format('embedded-opentype'),
+  url('fonts/icomoon.ttf?3h71nb') format('truetype'),
+  url('fonts/icomoon.woff?3h71nb') format('woff'),
+  url('fonts/icomoon.svg?3h71nb#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-butClose:before {
+  content: "\e91f";
+  color: #fff;
+}
+.icon-gas:before {
+  content: "\e91e";
+  color: #8399b8;
+}
+.icon-clock:before {
+  content: "\e921";
+  color: #2774fe;
+}
+.icon-fan:before {
+  content: "\e922";
+  color: #efc865;
+}
+.icon-iconValueCM:before {
+  content: "\e905";
+  color: #324156;
+}
+.icon-iconValueTx:before {
+  content: "\e90c";
+  color: #50e9d2;
+}
+.icon-iconStats:before {
+  content: "\e911";
+  color: #8399b8;
+}
+.icon-iconSearch:before {
+  content: "\e912";
+}
+.icon-iconSettings:before {
+  content: "\e913";
+  color: #8399b8;
+}
+.icon-iconConnect:before {
+  content: "\e914";
+  color: #8399b8;
+}
+.icon-iconCreateCM:before {
+  content: "\e915";
+  color: #324156;
+}
+.icon-iconContractAccount:before {
+  content: "\e916";
+  color: #efc865;
+}
+.icon-iconCalCM:before {
+  content: "\e917";
+  color: #324156;
+}
+.icon-iconCallTx:before {
+  content: "\e918";
+  color: #50e9d2;
+}
+.icon-iconCreateTx:before {
+  content: "\e919";
+  color: #50e9d2;
+}
+.icon-iconCopy:before {
+  content: "\e91a";
+  color: #8399b8;
+}
+.icon-iconExternalAccount:before {
+  content: "\e91b";
+  color: #ef6c6c;
+}
+.icon-iconLink:before {
+  content: "\e91c";
+  color: #2774fe;
+}
+.icon-iconPendingTx:before {
+  content: "\e91d";
+  color: #50e9d2;
+}
+.icon-checkmark-checked:before {
+  content: "\e90d";
+  color: #fff;
+}
+.icon-checkmark-unchecked:before {
+  content: "\e90e";
+  color: #fff;
+}
+.icon-circle-checked:before {
+  content: "\e90f";
+  color: #fff;
+}
+.icon-circle-unchecked:before {
+  content: "\e910";
+  color: #fff;
+}
+.icon-filter:before {
+  content: "\e90b";
+  color: #8399b8;
+}
+.icon-chain:before {
+  content: "\e900";
+}
+.icon-dapp-store:before {
+  content: "\e901";
+}
+.icon-login:before {
+  content: "\e902";
+}
+.icon-markets:before {
+  content: "\e903";
+}
+.icon-network-state:before {
+  content: "\e904";
+}
+.icon-logo:before {
+  content: "\e907";
+}
+.icon-left-chevron:before {
+  content: "\e906";
+}
+.icon-right-chevron:before {
+  content: "\e908";
+}
+.icon-left-arrow:before {
+  content: "\e909";
+}
+.icon-right-arrow:before {
+  content: "\e90a";
+}
+.icon-aleth_icon:before {
+  content: "\e923";
+}
+.icon-Google_Feedback:before {
+  content: "\e920";
+  color: #8399b8;
+}
+.icon-Guide_Tour:before {
+  content: "\e924";
+  color: #8399b8;
+}
+.icon-add_circle:before {
+  content: "\e925";
+}
+.icon-clear:before {
+  content: "\e926";
+}
+.icon-close:before {
+  content: "\e927";
+}
+.icon-error:before {
+  content: "\e928";
+}
+.icon-exit:before {
+  content: "\e929";
+}
+.icon-git:before {
+  content: "\e92a";
+}
+.icon-help:before {
+  content: "\e92b";
+}
+.icon-history:before {
+  content: "\e92c";
+}
+.icon-info:before {
+  content: "\e92d";
+}
+.icon-play:before {
+  content: "\e92e";
+}
+.icon-search:before {
+  content: "\e92f";
+}
+.icon-skip:before {
+  content: "\e930";
+}
+.icon-previous:before {
+  content: "\e931";
+}
+.icon-butClose:before {
+  content: "\e91f";
+}
+.icon-pause:before {
+  content: "\e932";
+}
+.icon-sort-arrow:before {
+  content: "\e933";
+}
+.icon-ethstats_icon .path1:before {
+  content: "\e944";
+  color: rgb(255, 255, 255);
+}
+.icon-ethstats_icon .path2:before {
+  content: "\e945";
+  margin-left: -1em;
+  color: rgb(15, 25, 39);
+}
+.icon-ethstats_icon .path3:before {
+  content: "\e946";
+  margin-left: -1em;
+  color: rgb(39, 116, 254);
+}
+.icon-privacy-policy:before {
+  content: "\e947";
+}

@@ -1,0 +1,68 @@
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"] {
+  display: inline-block;
+  min-width: 20rem;
+  padding: 0.8rem 1.6rem 0.6rem;
+  margin: 0 0 1rem;
+  background-color: rgba($blue, 0.1);
+  font-family: $main-font;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1;
+  color: $text-color;
+  letter-spacing: -0.57px;
+  border-radius: 9999px;
+  border: 2px solid $blue;
+  -webkit-appearance: none;
+
+  &:focus,
+  &:active {
+    outline: none;
+  }
+
+  &.input-error {
+    border-color: $red;
+  }
+}
+
+/** Textarea Styles **/
+textarea {
+  max-width: 100%;
+  height: auto;
+  padding: 0.8rem 1.6rem 0.6rem;
+}
+
+/** Placeholder Styles **/
+@mixin input-placeholder {
+  transition: color $transition-time $transition-easing;
+  color: $text-color;
+  //opacity: 0.3;
+}
+
+::-webkit-input-placeholder {
+  @include input-placeholder;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  @include input-placeholder;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  @include input-placeholder;
+}
+
+:-ms-input-placeholder {
+  @include input-placeholder;
+}

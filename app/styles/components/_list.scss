@@ -1,0 +1,195 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+
+  .list-item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 100%;
+    background: #1C2B3E;
+    border: 1px solid rgba(50,65,86,0.50);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.05);
+    border-radius: 8px;
+    margin: 0 0 2rem;
+    padding: 0 15px;
+
+    &:last-child {
+      margin: 0;
+    }
+
+    &.clickable {
+      cursor: pointer;
+      transition: background-color $transition-time $transition-easing;
+
+      &:hover, &:focus {
+        background-color: rgba(#1A222F, 1);
+      }
+    }
+
+    .list-value {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: center;
+      padding: 1.1rem 0 1.3rem;
+
+      .main {
+        display: flex;
+        font-family: $secondary-font;
+        font-size: 3.0rem;
+        line-height: 4.6rem;
+        letter-spacing: -0.2rem;
+        color: $white;
+      }
+
+      .aside {
+        display: flex;
+        flex-direction: column;
+        padding: 0 0 0 1rem;
+        justify-content: center;
+
+        .upper {
+          color: $text-color;
+          font-size: 1.2rem;
+          font-weight: 600;
+          line-height: 1.7rem;
+
+          a, a:visited {
+            color: $text-color;
+          }
+        }
+
+        .bottom {
+          color: $grey_v1;
+          font-size: 1.2rem;
+          font-weight: 600;
+          line-height: 1.7rem;
+
+          a, a:visited {
+            color: $text-color;
+          }
+
+          .large {
+            display: inline-block;
+            margin-top: -2px;
+            font-size: 1.8rem;
+            font-weight: 500;
+            vertical-align: baseline;
+          }
+        }
+      }
+
+      &.generic-value {
+
+        .aside {
+
+          .upper {
+            color: $grey_v1;
+          }
+
+          .bottom {
+            color: $white;
+          }
+        }
+      }
+
+      &.blockNo-value {
+
+        .upper {
+          white-space: nowrap;
+        }
+      }
+
+      &.transactions-value {}
+
+      &.reward-value {
+
+        .main {
+          color: $grey_v1;
+        }
+
+        .aside {
+
+          .upper {
+            color: $grey_v1;
+          }
+        }
+      }
+
+      &.amount-value {
+
+        .aside {
+
+          .upper {
+            color: $grey_v1;
+          }
+
+          .bottom {
+            color: $white;
+          }
+        }
+
+        &.compact {
+          justify-content: flex-start;
+
+          .aside {
+            padding: 0 0 0 0.8rem;
+          }
+        }
+      }
+
+      &.uncle-value {
+
+        .aside {
+
+          .upper {
+            color: $white;
+          }
+        }
+      }
+
+      &.miner-value {
+        justify-content: flex-end;
+
+        .aside {
+          text-align: right;
+
+          .upper {
+            color: $grey_v1;
+          }
+        }
+      }
+
+      &.txHash-value {
+        .upper {
+          cursor: pointer;
+          color: $white;
+          font-size: 18px;
+          line-height: 23px;
+          font-weight: 600;
+        }
+      }
+
+      &.fromTo-value {
+
+        .main {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          font-family: $main-font;
+          font-size: 1.2rem;
+          font-weight: 600;
+          line-height: 1.7rem;
+          letter-spacing: 0;
+          color: $grey_v1;
+        }
+
+        .aside {
+          padding: 0 0 0 2.1rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,138 @@
+
+.privacypolicy {
+  a {
+    display: inline;
+    overflow: hidden;
+  }
+  .divTable{
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+  }
+  .divTableRow {
+    display: table-row;
+  }
+  .divTableHeading {
+    background-color: #8399B8;
+    display: table-header-group;
+  }
+  .divTableCell, .divTableHead {
+    border: 1px solid #8399B8;
+    display: table-cell;
+    padding: 3px 10px;
+  }
+  .divTableHeading {
+    background-color: #8399B8;
+    display: table-header-group;
+    font-weight: bold;
+  }
+  .divTableFoot {
+    background-color: #8399B8;
+    display: table-footer-group;
+    font-weight: bold;
+  }
+  .divTableBody {
+    display: table-row-group;
+  }
+  .privacy {
+    padding-top: 100px;
+    padding-bottom: 80px;
+  }
+  .title {
+    padding-bottom: 60px;
+  }
+  .uppercase {
+    text-transform: uppercase;
+  }
+  .centered {
+    text-align: center;
+  }
+  .h1 {
+    font-size: 18px;
+    margin: 0;
+    padding-bottom: 5px;
+  }
+  .main-content {
+    //background-color: $white;
+    font-size: 14px;
+    max-width: 920px;
+    padding: 0 40px;
+    margin: 0 auto;
+    text-align: justify;
+    padding-bottom: 50px;
+  }
+  .bold {
+    font-weight: 600;
+  }
+  .italic {
+    font-style: italic;
+  }
+  .underline {
+    text-decoration: underline;
+  }
+  .no-margin {
+    margin: 0;
+  }
+  .flex-row {
+    display: flex;
+    width: 100%;
+  }
+  .grow {
+    flex-grow: 2;
+  }
+  .table-header-item {
+    border: 1px solid #8399B8;
+    padding: 5px 0;
+    flex-basis: 50%;
+  }
+  .table-item {
+    border: 1px solid #8399B8;
+    border-top: none;
+    padding: 5px;
+    flex-basis: 50%;
+  }
+  .small-table-header-item {
+    flex-basis: 20%;
+    border: 1px solid #8399B8;
+    padding: 5px;
+    text-align: center;
+  }
+  .small-table-item {
+    flex-basis: 20%;
+    border: 1px solid #8399B8;
+    border-top: none;
+    padding: 10px;
+  }
+  .no-right-border {
+    border-right: none;
+  }
+
+  li {
+    padding-bottom: 4px;
+  }
+  & .content-header {
+    max-width: 920px;
+    margin: 0 auto;
+    & .header {
+      margin: 108px 0 50px 40px;
+
+      & h6 {
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 2px;
+        line-height: 20px;
+      }
+      & h1.medium {
+        letter-spacing: 0;
+        line-height: 64px;
+        font-weight: 400;
+      }
+      & p {
+        font-size: 18px;
+        letter-spacing: 0.2px;
+        line-height: 28px;
+        font-weight: 400;
+      }
+    }
+  }
+}

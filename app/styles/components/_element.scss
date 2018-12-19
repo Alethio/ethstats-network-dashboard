@@ -1,0 +1,15 @@
+.element {
+  cursor: pointer;
+  transition: opacity $transition-time $transition-easing;
+
+  &:hover, &:focus {
+    opacity: 1 !important;
+  }
+}
+
+.element-hovered {
+
+  .element {
+    opacity: 0.5;
+  }
+}

@@ -1,0 +1,260 @@
+.side-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1 0 240px;
+  height: 100vh;
+  width: 240px;
+  max-width: 240px;
+  background-color: $darkBlue;
+  border-right: 1px solid $line-color;
+  position: relative;
+
+  .top-content {
+    position: relative;
+
+    .change-state {
+      position: relative;
+      z-index: 20;
+      display: block;
+      padding: 17px 22px 0;
+      color: rgba($text-color, 0.5);
+      transition: color $transition-easing $transition-time;
+      cursor: pointer;
+
+      &:hover, &:focus  {
+        color: rgba($text-color, 1);
+      }
+    }
+
+    .list {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+
+      .list-value {
+        position: relative;
+        border-bottom: 1px solid $line-color;
+        cursor: pointer;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        .content {
+          height: 60px;
+          transition: color $transition-easing $transition-time;
+          padding: 0 21px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          font-size: 14px;
+          line-height: 18px;
+          font-weight: 600;
+          letter-spacing: 0.4px;
+          position: relative;
+
+          .icon {
+            color: rgba($blue, 0.7);
+            transition: color $transition-easing $transition-time;
+          }
+
+          .title {
+            padding: 0 0 0 12px;
+          }
+
+          .expand-arrow {
+            display: block;
+            margin: 0 0 0 auto;
+            right: 20px;
+            color: rgba($text-color, 0.5);
+            transition: color $transition-easing $transition-time;
+          }
+        }
+
+        .child-popup {
+          position: absolute;
+          left: 75%;
+          top: 0;
+          z-index: 10;
+        }
+
+        &:hover, &:focus {
+
+          .content {
+            color: $white;
+
+            .icon {
+              color: rgba($blue, 1);
+            }
+
+            .expand-arrow {
+              color: rgba($text-color, 1);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .change-dev-mode {
+    position: absolute;
+    padding: 20px;
+    text-align: center;
+    font-weight: 600;
+    cursor: pointer;
+    bottom: 60px;
+    transition: color $transition-easing $transition-time;
+    width: 100%;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  .change-icon-type {
+    position: absolute;
+    padding: 20px;
+    text-align: center;
+    font-weight: 600;
+    cursor: pointer;
+    bottom: 120px;
+    transition: color $transition-easing $transition-time;
+    width: 100%;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  .footer {
+    border-top: 1px solid $line-color;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .logo {
+      padding: 15px 15px 15px 14px;
+      font-size: 30px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      color: rgba($text-color, 0.5);
+      transition: color $transition-easing $transition-time;
+
+      .icon {
+        margin: 0 10px 0 0;
+
+        span {
+          font-size: 30px;
+        }
+      }
+
+      &:hover, &:focus {
+        color: rgba($text-color, 1);
+      }
+    }
+
+    .settings {
+      padding: 22px 20px 17px;
+      color: rgba($text-color, 0.5);
+      transition: color $transition-easing $transition-time;
+
+      .icon {
+        span {
+          font-size: 17px;
+        }
+      }
+
+      &:hover, &:focus {
+        color: rgba($text-color, 1);
+      }
+    }
+  }
+
+  &.collapsed {
+    width: 60px;
+    flex: 1 0 60px;
+    max-width: 60px;
+
+    input {
+      display: none;
+    }
+
+    .change-state {
+      padding-left: 0;
+      padding-right: 0;
+      text-align: center;
+    }
+
+    .list {
+
+      .list-value {
+
+        .child-popup {
+          position: absolute;
+          left: 92%;
+          top: 0;
+          z-index: 10;
+        }
+
+        .content {
+
+          .title {
+            display: none;
+          }
+
+          .expand-arrow {
+            display: none;
+          }
+        }
+
+        &.active {
+          background-color: $blue;
+
+          .content {
+
+            .icon {
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+
+    .change-dev-mode {
+      display: none;
+    }
+
+    .change-icon-type {
+      display: none;
+    }
+
+    .footer {
+      flex-direction: column;
+
+      .logo {
+        justify-content: center;
+        border-top: 1px solid $line-color;
+
+        .icon {
+          margin: 0;
+        }
+
+        .text-img {
+          display: none;
+        }
+      }
+
+      .settings {
+        order: -1;
+      }
+    }
+  }
+}
+
+
+.chain-popup-content {
+  padding: 7px 10px 0 22px;
+}

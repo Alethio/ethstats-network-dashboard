@@ -1,0 +1,34 @@
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 90;
+  background: rgba($darkBlue, 0.7);
+
+  &.addNodeBg {
+    background: rgba(24, 34, 49, 0.9);
+  }
+
+  .blur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+  }
+
+
+  .error-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    width: 500px;
+    height: 500px;
+    color: white;
+  }
+}
