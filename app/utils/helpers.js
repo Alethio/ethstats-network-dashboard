@@ -294,21 +294,21 @@ export function prepareUncleChartData(data, dataKey) {
   return finalArray;
 }
 
-export function preparePropagationChartData( data, dataKey) {
+export function preparePropagationChartData(data, dataKey) {
   const finalArray = [];
-  for (let i = data.length - 1; i >= 0; i--) {
+  for (let i = 0; i < data.length; i++) {
     let intervalString;
-    if (data[data.length - i - 1].x < 9.75) {
-      intervalString = data[data.length - i - 1].x + 's - ' + parseFloat(data[data.length - i - 1].x + 0.25) + 's';
+    if (i < data.length - 1) {
+      intervalString = data[i].x.toFixed(2) + 's - ' + parseFloat(data[i].x - -data[i].dx).toFixed(2) + 's';
     } else {
-      intervalString = '>= 9.75s';
+      intervalString = `>= ${data[i].x}s`;
     }
     finalArray.push({
-      [dataKey]: parseFloat(data[data.length - i - 1].y) * 100,
+      [dataKey]: parseFloat(data[i].y) * 100,
       interval: intervalString,
-      cumpercent: data[data.length - i - 1].cumpercent,
-      frequency: data[data.length - i - 1].frequency,
-      cumulative: data[data.length - i - 1].cumulative,
+      cumpercent: data[i].cumpercent,
+      frequency: data[i].frequency,
+      cumulative: data[i].cumulative,
     });
   }
   return finalArray;

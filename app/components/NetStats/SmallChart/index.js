@@ -56,7 +56,7 @@ class SmallChart extends React.Component {
     };
     let chartWidth = this.props.barCount * BAR_WIDTH;
     if (full) {
-      chartWidth = 237;
+      chartWidth = 297;
     }
     return (
       <div>

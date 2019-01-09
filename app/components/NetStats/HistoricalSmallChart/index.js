@@ -53,7 +53,7 @@ class HistoricalSmallChart extends React.Component {
     };
     let chartWidth = this.props.numberOfBars * BAR_WIDTH;
     if (full) {
-      chartWidth = 237;
+      chartWidth = 297;
     }
     return (
       <div>

@@ -21,7 +21,7 @@ import Footer from '../../components/NetStats/Footer';
 const BIG_BAR_WIDTH = 8;
 const SMALL_BAR_WIDTH = 6;
 const BIG_ZONE_USED_CONTENT = 715;
-const SMALL_ZONE_USED_CONTENT = 980;
+const SMALL_ZONE_USED_CONTENT = 1040;
 const MIN_SMALL_BARS = 26;
 const MIN_BIG_BARS = 30;
 
