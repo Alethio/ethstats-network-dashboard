@@ -1,6 +1,6 @@
 # ethstats-network-dashboard
 
-> EthStats Network Dashboard
+> EthStats - Network Monitor - Dashboard
 >
 > Front-end application for the EthStats Network Statistics tool [net.ethstats.io](https://net.ethstats.io/)
 

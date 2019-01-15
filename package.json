@@ -1,7 +1,7 @@
 {
   "name": "ethstats-network-dashboard",
   "version": "1.1.1",
-  "description": "EthStats Network Dashboard",
+  "description": "EthStats - Network Monitor - Dashboard (net.ethstats.io)",
   "homepage": "https://github.com/alethio/ethstats-network-dashboard",
   "repository": "git@github.com:alethio/ethstats-network-dashboard.git",
   "license": "MIT",
