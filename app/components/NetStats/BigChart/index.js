@@ -22,7 +22,9 @@ const CHART_MARGINS = {
 
 class BigChart extends Component {
   handleClickAction(data, index) {
-    // browserHistory.push(`Block_${data['block'].replace(/,/g, '').replace(/\s/g, '')}`);
+    let blockNr = data.block.match(/\d/g);
+    blockNr = blockNr.join('');
+    window.open(`https://ethstats.io/block/${blockNr}`, '_blank');
   }
   render() {
     const {dataKey, tooltipKey, measureUnit, hasDomain, hasNavigation, color, chartStateData, labelPrefix, valuePrefix} = this.props;
@@ -88,7 +90,7 @@ class BigChart extends Component {
         { chartStateData ?
           <div>
             <BarChart
-              cursor="default"
+              cursor="pointer"
               width={this.props.numberOfBars * BAR_WIDTH} height={CHART_HEIGHT} data={data}
               margin={CHART_MARGINS}
               className="pointer">
