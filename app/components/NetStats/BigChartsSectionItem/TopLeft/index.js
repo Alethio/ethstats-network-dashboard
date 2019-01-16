@@ -7,6 +7,11 @@ import Value from '../Value';
 
 
 class TopLeft extends React.Component {
+  handleClickAction(data) {
+    let blockNr = data.match(/\d/g);
+    blockNr = blockNr.join('');
+    window.open(`https://ethstats.io/block/${blockNr}`, '_blank');
+  }
   render() {
     const { mainTitle, color, chartStateData, reducerName } = this.props;
     let finalValue = '';
@@ -22,7 +27,11 @@ class TopLeft extends React.Component {
     return (
       <div>
         <Title>{mainTitle}</Title>
-        { chartStateData && <Value color={color}>{finalValue}</Value> }
+        { chartStateData &&
+          <Value color={color} onClick={ reducerName === 'lastBlock' ? () => this.handleClickAction(finalValue) : null }
+            className={ reducerName === 'lastBlock' ? 'pointer' : ''}>
+            {finalValue}
+          </Value> }
       </div>
     );
   }

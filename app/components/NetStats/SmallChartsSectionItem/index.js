@@ -6,7 +6,7 @@ import SmallChart from 'components/NetStats/SmallChart';
 
 class SmallChartsSectionItem extends React.Component {
   render() {
-    const { title, color, dataKey, tooltipKey, measureUnit, hasDomain, full, reducerName, labelPrefix, valuePrefix } = this.props;
+    const { title, color, dataKey, tooltipKey, measureUnit, hasDomain, full, reducerName, labelPrefix, valuePrefix, hasNavigation } = this.props;
     return (
       <Container>
         <Title>{ title }</Title>
@@ -16,10 +16,11 @@ class SmallChartsSectionItem extends React.Component {
           tooltipKey={ tooltipKey }
           measureUnit={ measureUnit }
           hasDomain={ hasDomain }
-          full={full}
-          chartReducer={reducerName}
-          valuePrefix={valuePrefix}
-          labelPrefix={labelPrefix}
+          full={ full }
+          chartReducer={ reducerName }
+          valuePrefix={ valuePrefix }
+          labelPrefix={ labelPrefix }
+          hasNavigation={ hasNavigation }
         />
       </Container>
     );
@@ -36,6 +37,7 @@ SmallChartsSectionItem.propTypes = {
   valuePrefix: PropTypes.string,
   labelPrefix: PropTypes.string,
   hasDomain: PropTypes.bool,
+  hasNavigation: PropTypes.bool,
   full: PropTypes.bool,
 };
 

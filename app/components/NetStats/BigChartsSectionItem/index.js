@@ -28,7 +28,7 @@ class BigChartsSectionItem extends React.Component {
           <FlexRow>
             <TopRight color={color} mainTitle={thirdTitle} reducerName={topRightReducer}/>
           </FlexRow>
-          <BigChart valuePrefix={valuePrefix} labelPrefix={labelPrefix} color={color} dataKey={dataKey} measureUnit={measureUnit} tooltipKey={tooltipKey} hasDomain={hasDomain} chartReducer={chartReducer}/>
+          <BigChart valuePrefix={valuePrefix} labelPrefix={labelPrefix} color={color} dataKey={dataKey} measureUnit={measureUnit} tooltipKey={tooltipKey} hasDomain={hasDomain} chartReducer={chartReducer} hasNavigation/>
         </RightContainer>
       </Container>
     );
