@@ -7,7 +7,7 @@ import Value from '../Value';
 
 
 class TopLeft extends React.Component {
-  handleClickAction(data, index) {
+  handleClickAction(data) {
     let blockNr = data.match(/\d/g);
     blockNr = blockNr.join('');
     window.open(`https://ethstats.io/block/${blockNr}`, '_blank');
