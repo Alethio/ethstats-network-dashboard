@@ -27,6 +27,7 @@ class SmallChartsSection extends React.Component {
             reducerName="transactionsHistory"
             // valuePrefix="Transactions: "
             labelPrefix="Block: "
+            hasNavigation
           />
           <SmallChartsSectionItem
             title="Gas spending"
@@ -38,6 +39,7 @@ class SmallChartsSection extends React.Component {
             reducerName="gasSpending"
             // valuePrefix="Gas spending: "
             labelPrefix="Block: "
+            hasNavigation
           />
           <SmallChartsSectionItem
             title="Block propagation"

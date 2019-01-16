@@ -21,7 +21,7 @@ const CHART_MARGINS = {
 };
 
 class BigChart extends Component {
-  handleClickAction(data, index) {
+  handleClickAction(data) {
     let blockNr = data.block.match(/\d/g);
     blockNr = blockNr.join('');
     window.open(`https://ethstats.io/block/${blockNr}`, '_blank');
