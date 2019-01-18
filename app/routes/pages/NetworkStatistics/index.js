@@ -40,7 +40,7 @@ class NetworkStatistics extends React.Component {
         });
       });
     });
-    DsService.getRawRecord('pending/lastBlockData').then( ( record ) => {
+    DsService.getRawRecord('pending/v2/lastBlockData').then( ( record ) => {
       record.subscribe(this.handlePendingLastBlockSubscribe.bind(this), true);
     });
   }

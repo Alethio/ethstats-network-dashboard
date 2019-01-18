@@ -34,9 +34,11 @@ workflows:
               only: /.*/
       - trigger-docker-hub:
           requires:
-          - build
+            - build
           filters:
             tags:
               only: /^v[0-9.]+$/
             branches:
-              only: master
+              only:
+                - master
+                - beta
