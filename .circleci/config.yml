@@ -37,8 +37,9 @@ workflows:
             - build
           filters:
             tags:
-              only: /^v[0-9.]+$/
+              only:
+                - latest
+                - /^v[0-9.]+$/
             branches:
               only:
                 - master
-                - beta
