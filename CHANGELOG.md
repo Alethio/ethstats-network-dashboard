@@ -1,6 +1,9 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.1.3] - 2019-01-23
+- Update default Google Analytics ID
+
 ## [1.1.2] - 2019-01-19
 - Add action to block number value from historical mode to open EthStats block explorer on specific block page
 - Add action to tx count and gas small charts to open EthStats block explorer at specific block page
