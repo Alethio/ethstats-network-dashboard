@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { EXPLORER_URL } from 'config';
 import { BarChart, Bar, Tooltip, YAxis, ReferenceLine } from 'recharts';
 import { convertHashes, numberWithCommas, prepareChartData } from 'utils/helpers';
 import { BigNumber }  from 'bignumber.js';
@@ -11,6 +12,7 @@ import Container from './Container';
 import Label from './Label';
 import Value from './Value';
 import spinner from 'resources/img/Eclipse.svg';
+
 const BAR_WIDTH = 8;
 const CHART_HEIGHT = 91;
 const CHART_MARGINS = {
@@ -24,7 +26,7 @@ class BigChart extends Component {
   handleClickAction(data) {
     let blockNr = data.block.match(/\d/g);
     blockNr = blockNr.join('');
-    window.open(`https://ethstats.io/block/${blockNr}`, '_blank');
+    window.open(`${EXPLORER_URL}/block/${blockNr}`, '_blank');
   }
   render() {
     const {dataKey, tooltipKey, measureUnit, hasDomain, hasNavigation, color, chartStateData, labelPrefix, valuePrefix} = this.props;
@@ -102,7 +104,7 @@ class BigChart extends Component {
               </defs>
               <Tooltip offset={0} wrapperStyle={{top: '60px', zIndex: 100}} content={<ChartTooltip dataKey={dataKey} tooltipKey={tooltipKey} measureUnit={measureUnit} valuePrefix={valuePrefix} labelPrefix={labelPrefix}/>}/>
               { hasNavigation ?
-                <Bar dataKey={dataKey} minPointSize={minPointSize} isAnimationActive={false} fill={color} shape={<RoundedBar/>} onClick={this.handleClickAction}/>
+                <Bar dataKey={dataKey} minPointSize={minPointSize} isAnimationActive={false} fill={color} shape={<RoundedBar/>} onClick={ EXPLORER_URL ?  this.handleClickAction : null}/>
                 : <Bar dataKey={dataKey} minPointSize={minPointSize} isAnimationActive={false} fill={color} shape={<RoundedBar/>} />}
               {hasDomain && <YAxis orientation="left" domain={[min, max]} hide/>}
               <ReferenceLine y={avg} label="" stroke={chartColor} />

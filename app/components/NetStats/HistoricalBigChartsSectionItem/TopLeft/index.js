@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { EXPLORER_URL } from 'config.js';
 
 import Title from 'components/NetStats/BigChartsSectionItem/Title';
 import Value from 'components/NetStats/BigChartsSectionItem/Value';
@@ -9,14 +10,14 @@ class TopLeft extends React.Component {
   handleClickAction(data) {
     let blockNr = data.match(/\d/g);
     blockNr = blockNr.join('');
-    window.open(`https://ethstats.io/block/${blockNr}`, '_blank');
+    window.open(`${EXPLORER_URL}/block/${blockNr}`, '_blank');
   }
   render() {
     const { title, value, color } = this.props;
     return (
       <div>
         <Title>{title}</Title>
-        <Value color={color} onClick={ () => this.handleClickAction(value) } className={ title === 'Block number' ? 'pointer' : '' }>
+        <Value color={color} onClick={  title === 'BlockNumber' && EXPLORER_URL ? () => this.handleClickAction(value) : null } className={ title === 'Block number' ? 'pointer' : '' }>
           {value}
         </Value>
       </div>
