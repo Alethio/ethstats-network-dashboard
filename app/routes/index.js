@@ -1,6 +1,5 @@
 import React from 'react';
 import { Route, IndexRoute, browserHistory } from 'react-router';
-import config from 'config';
 
 import App from 'containers/App';
 
