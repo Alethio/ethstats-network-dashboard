@@ -68,10 +68,10 @@ class SmallChart extends React.Component {
           <div>
             {dataKey === 'histogram' ?
               <ComposedChart
-                cursor="default"
+                cursor={EXPLORER_URL ? 'pointer' : ''}
                 width={chartWidth} height={CHART_HEIGHT} data={data}
                 margin={CHART_MARGINS}
-                className="pointer">
+                className={EXPLORER_URL && 'pointer'}>
                 <Tooltip offset={0} wrapperStyle={{top: '-55px'}} content={<ChartTooltip dataKey={dataKey} tooltipKey={tooltipKey} measureUnit={measureUnit} full={full}/>}/>
                 {hasNavigation ?
                   <Bar dataKey={dataKey} minPointSize={1} isAnimationActive={false} fill={color} shape={<RoundedBar/>} onClick={EXPLORER_URL ? this.handleClickAction : null}/>
@@ -84,7 +84,7 @@ class SmallChart extends React.Component {
                   cursor="default"
                   width={chartWidth} height={CHART_HEIGHT} data={data}
                   margin={CHART_MARGINS}
-                  className="pointer">
+                  className={EXPLORER_URL && 'pointer'}>
                   <Tooltip offset={0} wrapperStyle={{top: '-50px'}} content={<ChartTooltip forUncles dataKey={dataKey} tooltipKey={tooltipKey} measureUnit={measureUnit} full={full} labelPrefix={labelPrefix} valuePrefix={valuePrefix}/>}/>
                   {hasNavigation ?
                     <Bar dataKey={dataKey} minPointSize={3} isAnimationActive={false} fill={color} shape={<RoundedBar/>} onClick={EXPLORER_URL ? this.handleClickAction : null}/> :
@@ -93,10 +93,10 @@ class SmallChart extends React.Component {
                 </BarChart> :
                 chartStateData ?
                   <BarChart
-                    cursor="pointer"
+                    cursor={EXPLORER_URL ? 'pointer' : ''}
                     width={chartWidth} height={CHART_HEIGHT} data={data}
                     margin={CHART_MARGINS}
-                    className="pointer">
+                    className={EXPLORER_URL && 'pointer'}>
                     <Tooltip offset={0} wrapperStyle={{top: '-50px'}} content={<ChartTooltip dataKey={dataKey} tooltipKey={tooltipKey} measureUnit={measureUnit} full={full} labelPrefix={labelPrefix} valuePrefix={valuePrefix}/>}/>
                     {hasNavigation ?
                       <Bar dataKey={dataKey} minPointSize={3} isAnimationActive={false} fill={color} shape={<RoundedBar/>} onClick={EXPLORER_URL ? this.handleClickAction : null}/> :

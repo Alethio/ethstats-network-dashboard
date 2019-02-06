@@ -30,7 +30,7 @@ class TopLeft extends React.Component {
         <Title>{mainTitle}</Title>
         { chartStateData &&
           <Value color={color} onClick={ reducerName === 'lastBlock' && EXPLORER_URL ? () => this.handleClickAction(finalValue) : null }
-            className={ reducerName === 'lastBlock' ? 'pointer' : ''}>
+            className={ reducerName === 'lastBlock' && EXPLORER_URL ? 'pointer' : ''}>
             {finalValue}
           </Value> }
       </div>

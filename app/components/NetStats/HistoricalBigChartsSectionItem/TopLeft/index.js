@@ -17,7 +17,8 @@ class TopLeft extends React.Component {
     return (
       <div>
         <Title>{title}</Title>
-        <Value color={color} onClick={  title === 'BlockNumber' && EXPLORER_URL ? () => this.handleClickAction(value) : null } className={ title === 'Block number' ? 'pointer' : '' }>
+        <Value color={color} onClick={  title === 'BlockNumber' && EXPLORER_URL ? () => this.handleClickAction(value) : null }
+          className={ title === 'Block number' && EXPLORER_URL ? 'pointer' : '' }>
           {value}
         </Value>
       </div>

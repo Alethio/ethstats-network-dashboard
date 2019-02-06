@@ -92,10 +92,10 @@ class BigChart extends Component {
         { chartStateData ?
           <div>
             <BarChart
-              cursor="pointer"
+              cursor={EXPLORER_URL ? 'pointer' : '' }
               width={this.props.numberOfBars * BAR_WIDTH} height={CHART_HEIGHT} data={data}
               margin={CHART_MARGINS}
-              className="pointer">
+              className={EXPLORER_URL ? 'pointer' : '' }>
               <defs>
                 <linearGradient x1="50%" y1="3.061617e-15%" x2="50%" y2="100%" id="barGradient">
                   <stop stopColor="#40FFFF" offset="0%"/>
