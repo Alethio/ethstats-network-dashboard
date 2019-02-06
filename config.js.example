@@ -4,6 +4,6 @@ const config = {
   DS_USER: 'frontend',
   DS_PASS: '',
   DS_NAMESPACE: 'ethstats/',
-  EXPLORER_URL: 'https://ethstats.io',
-  PRIVACY_POLICY: true
+  EXPLORER_URL: '',
+  PRIVACY_POLICY: false
 };

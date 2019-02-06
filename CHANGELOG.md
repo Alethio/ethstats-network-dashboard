@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.1.4] - 2019-02-06
+- Added config EXPLORER_URL
+- Added config PRIVACY_POLICY
+- Fixed config issues
+
 ## [1.1.3] - 2019-01-23
 - Update default Google Analytics ID
 
