@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, IndexRoute, browserHistory } from 'react-router';
-import { PRIVACY_POLICY } from 'config.js';
+import { PRIVACY_POLICY } from 'config';
 
 import App from 'containers/App';
 

@@ -5,5 +5,5 @@ const config = {
   DS_PASS: '',
   DS_NAMESPACE: 'ethstats/',
   EXPLORER_URL: 'https://ethstats.io',
-  PRIVACY_POLICY: true,
+  PRIVACY_POLICY: true
 };
