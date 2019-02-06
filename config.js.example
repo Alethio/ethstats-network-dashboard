@@ -3,5 +3,7 @@ const config = {
   DS_URL: '127.0.0.1:6020',
   DS_USER: 'frontend',
   DS_PASS: '',
-  DS_NAMESPACE: 'ethstats/'
+  DS_NAMESPACE: 'ethstats/',
+  EXPLORER_URL: 'https://ethstats.io',
+  PRIVACY_POLICY: true
 };

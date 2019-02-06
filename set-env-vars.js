@@ -25,7 +25,11 @@ config = JSON.parse(config);
 
 Object.keys(config).forEach(item => {
   if (process.env[item]) {
-    config[item] = process.env[item];
+    if (item === 'PRIVACY_POLICY') {
+      config[item] = process.env[item] === 'true';
+    } else {
+      config[item] = process.env[item];
+    }
   }
 });
 

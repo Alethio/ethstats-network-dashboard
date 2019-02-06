@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { EXPLORER_URL } from 'config';
 import { numberWithCommas, convertHashes } from 'utils/helpers';
 import Title from '../Title';
 import Value from '../Value';
@@ -10,7 +11,7 @@ class TopLeft extends React.Component {
   handleClickAction(data) {
     let blockNr = data.match(/\d/g);
     blockNr = blockNr.join('');
-    window.open(`https://ethstats.io/block/${blockNr}`, '_blank');
+    window.open(`${EXPLORER_URL}/block/${blockNr}`, '_blank');
   }
   render() {
     const { mainTitle, color, chartStateData, reducerName } = this.props;
@@ -28,8 +29,8 @@ class TopLeft extends React.Component {
       <div>
         <Title>{mainTitle}</Title>
         { chartStateData &&
-          <Value color={color} onClick={ reducerName === 'lastBlock' ? () => this.handleClickAction(finalValue) : null }
-            className={ reducerName === 'lastBlock' ? 'pointer' : ''}>
+          <Value color={color} onClick={ reducerName === 'lastBlock' && EXPLORER_URL ? () => this.handleClickAction(finalValue) : null }
+            className={ reducerName === 'lastBlock' && EXPLORER_URL ? 'pointer' : ''}>
             {finalValue}
           </Value> }
       </div>

@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Graph from 'react-graph-vis';
 import TxIcon from 'resources/img/Transaction.png';
 import ContractMsgIcon from 'resources/img/ContractMsg.png';
@@ -9,9 +8,6 @@ import triggerGraph from 'resources/dummyData/triggerGraph';
 import accountInteractionGraph from 'resources/dummyData/accountInteractionGraph';
 import messageGraph from 'resources/dummyData/messageGraph';
 import SelectorType from './SelectorType';
-
-const prefix = 'https://stage.ethstats.io/';
-
 
 class DemoCallGraphs extends React.Component {
   constructor(props) {

@@ -8,6 +8,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Init Config
+          command: ./set-env-vars.js > config.js
+      - run:
           name: Yarn Install
           command: yarn install
       - run:

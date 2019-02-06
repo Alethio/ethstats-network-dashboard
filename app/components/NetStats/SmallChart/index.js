@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { EXPLORER_URL } from 'config';
 import {BarChart, ComposedChart, Line, Bar, Tooltip, YAxis} from 'recharts';
 import ChartTooltip from 'components/ChartTooltip';
 import {prepareChartData, prepareUncleChartData, preparePropagationChartData, prepareETHPendingChartData, prepareGasPriceChartData} from 'utils/helpers';
@@ -8,6 +9,7 @@ import RoundedBar from './RoundedBar';
 import SpinnerContainer from './SpinnerContainer';
 import spinnerImgRes from 'resources/img/Eclipse.svg';
 import Spinner from '../BigChartsSectionItem/Spinner';
+
 const BAR_WIDTH = 6;
 const CHART_HEIGHT = 62;
 const CHART_MARGINS = {
@@ -22,7 +24,7 @@ class SmallChart extends React.Component {
   handleClickAction(data) {
     let blockNr = data.block.match(/\d/g);
     blockNr = blockNr.join('');
-    window.open(`https://ethstats.io/block/${blockNr}`, '_blank');
+    window.open(`${EXPLORER_URL}/block/${blockNr}`, '_blank');
   }
   render() {
     const { dataKey, tooltipKey, measureUnit, hasDomain, hasNavigation, color, full, chartStateData, labelPrefix, valuePrefix} = this.props;
@@ -66,13 +68,13 @@ class SmallChart extends React.Component {
           <div>
             {dataKey === 'histogram' ?
               <ComposedChart
-                cursor="default"
+                cursor={EXPLORER_URL ? 'pointer' : ''}
                 width={chartWidth} height={CHART_HEIGHT} data={data}
                 margin={CHART_MARGINS}
-                className="pointer">
+                className={EXPLORER_URL && 'pointer'}>
                 <Tooltip offset={0} wrapperStyle={{top: '-55px'}} content={<ChartTooltip dataKey={dataKey} tooltipKey={tooltipKey} measureUnit={measureUnit} full={full}/>}/>
                 {hasNavigation ?
-                  <Bar dataKey={dataKey} minPointSize={1} isAnimationActive={false} fill={color} shape={<RoundedBar/>} onClick={this.handleClickAction}/>
+                  <Bar dataKey={dataKey} minPointSize={1} isAnimationActive={false} fill={color} shape={<RoundedBar/>} onClick={EXPLORER_URL ? this.handleClickAction : null}/>
                   : <Bar dataKey={dataKey} minPointSize={1} isAnimationActive={false} fill={color} shape={<RoundedBar/>}/>}
                 <Line type="monotone" dataKey={dataKey} stroke="#EFC865" dot={false} activeDot={false} strokeWidth="1"/>
                 {hasDomain && <YAxis orientation="left" domain={[min, max]} hide/>}
@@ -82,22 +84,22 @@ class SmallChart extends React.Component {
                   cursor="default"
                   width={chartWidth} height={CHART_HEIGHT} data={data}
                   margin={CHART_MARGINS}
-                  className="pointer">
+                  className={EXPLORER_URL && 'pointer'}>
                   <Tooltip offset={0} wrapperStyle={{top: '-50px'}} content={<ChartTooltip forUncles dataKey={dataKey} tooltipKey={tooltipKey} measureUnit={measureUnit} full={full} labelPrefix={labelPrefix} valuePrefix={valuePrefix}/>}/>
                   {hasNavigation ?
-                    <Bar dataKey={dataKey} minPointSize={3} isAnimationActive={false} fill={color} shape={<RoundedBar/>} onClick={this.handleClickAction}/> :
+                    <Bar dataKey={dataKey} minPointSize={3} isAnimationActive={false} fill={color} shape={<RoundedBar/>} onClick={EXPLORER_URL ? this.handleClickAction : null}/> :
                     <Bar dataKey={dataKey} minPointSize={3} isAnimationActive={false} fill={color} shape={<RoundedBar/>}/>}
                   {hasDomain && <YAxis orientation="left" domain={[min, max]} hide/>}
                 </BarChart> :
                 chartStateData ?
                   <BarChart
-                    cursor="pointer"
+                    cursor={EXPLORER_URL ? 'pointer' : ''}
                     width={chartWidth} height={CHART_HEIGHT} data={data}
                     margin={CHART_MARGINS}
-                    className="pointer">
+                    className={EXPLORER_URL && 'pointer'}>
                     <Tooltip offset={0} wrapperStyle={{top: '-50px'}} content={<ChartTooltip dataKey={dataKey} tooltipKey={tooltipKey} measureUnit={measureUnit} full={full} labelPrefix={labelPrefix} valuePrefix={valuePrefix}/>}/>
                     {hasNavigation ?
-                      <Bar dataKey={dataKey} minPointSize={3} isAnimationActive={false} fill={color} shape={<RoundedBar/>} onClick={this.handleClickAction}/> :
+                      <Bar dataKey={dataKey} minPointSize={3} isAnimationActive={false} fill={color} shape={<RoundedBar/>} onClick={EXPLORER_URL ? this.handleClickAction : null}/> :
                       <Bar dataKey={dataKey} minPointSize={3} isAnimationActive={false} fill={color} shape={<RoundedBar/>}/>}
                     {hasDomain && <YAxis orientation="left" domain={[min, max]} hide/>}
                   </BarChart> : <div></div>
