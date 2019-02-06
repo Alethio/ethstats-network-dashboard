@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, IndexRoute, browserHistory } from 'react-router';
+import { PRIVACY_POLICY } from 'config.js';
 
 import App from 'containers/App';
 
@@ -13,7 +14,7 @@ export default () => {
     <Route path="/" component={App}>
       <IndexRoute name="Network Statistics" component={NetworkStatistics} />
       <Route path="demo-call-graphs" component={DemoCallGraphs} />
-      <Route path="privacy-policy" component={PrivacyPolicy} />
+      { PRIVACY_POLICY && <Route path="privacy-policy" component={PrivacyPolicy} /> }
       <Route path="history/block/:blockNr" component={({ params }) => <HistoricalBlock blockNr={params.blockNr}/>} />
       <Route path="*" name="404" component={() => {
         browserHistory.replace('/');

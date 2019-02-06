@@ -1,4 +1,5 @@
 import React from 'react';
+import { PRIVACY_POLICY } from 'config';
 import Container from './Container';
 import IconContainer from './IconContainer';
 import FlexRow from './FlexRow';
@@ -23,7 +24,7 @@ class Footer extends React.Component {
         <FlexRow>
           { this.props.hasGuideTour && guideTour}
           <ReportIssue />
-          <PrivacyPolicy/>
+          {PRIVACY_POLICY && <PrivacyPolicy/> }
         </FlexRow>
         <FlexRow>
           <Text>EthStats.io (beta) powered by </Text>
