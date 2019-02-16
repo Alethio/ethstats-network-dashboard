@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.1.5] - 2019-02-16
+- If all bars in a chart have the same value the domain "min" value should be 0
+- Fixed "Last Miners" chart
+
 ## [1.1.4] - 2019-02-06
 - Added config EXPLORER_URL
 - Added config PRIVACY_POLICY
