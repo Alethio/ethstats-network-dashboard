@@ -55,6 +55,9 @@ class BigChart extends Component {
       if (hasDomain && chartStateData) {
         min = Math.min(...data.map(item => item[dataKey]));
         max = Math.max(...data.map(item => item[dataKey]));
+        if (min === max) {
+          min = 0;
+        }
         if (dataKey === 'ethstats:blockTime') {
           minValueString = min + 's';
           maxValueString = max + 's';
