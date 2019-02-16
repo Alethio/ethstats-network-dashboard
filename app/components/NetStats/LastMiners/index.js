@@ -14,7 +14,7 @@ class LastMiners extends React.Component {
     const { minersData } = this.props;
     let content = [];
     let color = '#50E9D2';
-    if (minersData && minersData.length >= 2) {
+    if (minersData && minersData.length) {
       const usedData = minersData.slice(0, 2);
       usedData.forEach((item, index) => {
         if (index !== 0) {
