@@ -11,6 +11,7 @@ import PropTypes from 'prop-types';
 import RightContainer from './RightContainer';
 import TopLeft from './TopLeft/index';
 import TopRight from './TopRight/index';
+import { AVG_GAS_PRICE_ENABLED } from 'config';
 
 class BigChartsSectionItem extends React.Component {
   render() {
@@ -26,7 +27,7 @@ class BigChartsSectionItem extends React.Component {
             <Icon name={iconName} />
           </ChartIcon>
           <FlexRow>
-            <TopRight color={color} mainTitle={thirdTitle} reducerName={topRightReducer}/>
+            {(topRightReducer !== 'pendingLastBlock' || (topRightReducer === 'pendingLastBlock' && AVG_GAS_PRICE_ENABLED)) && <TopRight color={color} mainTitle={thirdTitle} reducerName={topRightReducer}/>}
           </FlexRow>
           <BigChart valuePrefix={valuePrefix} labelPrefix={labelPrefix} color={color} dataKey={dataKey} measureUnit={measureUnit} tooltipKey={tooltipKey} hasDomain={hasDomain} chartReducer={chartReducer} hasNavigation/>
         </RightContainer>
