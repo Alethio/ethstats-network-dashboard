@@ -1,6 +1,6 @@
 {
   "name": "ethstats-network-dashboard",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "EthStats - Network Monitor - Dashboard (net.ethstats.io)",
   "homepage": "https://github.com/alethio/ethstats-network-dashboard",
   "repository": "git@github.com:alethio/ethstats-network-dashboard.git",

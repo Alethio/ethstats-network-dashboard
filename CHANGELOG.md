@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.1.6] - 2019-02-18
+- Show correct min/max values for the big charts
+- Added config AVG_GAS_PRICE_ENABLED
+
 ## [1.1.5] - 2019-02-16
 - If all bars in a chart have the same value the domain "min" value should be 0
 - Fixed "Last Miners" chart
