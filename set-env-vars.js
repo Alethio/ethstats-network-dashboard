@@ -25,7 +25,7 @@ config = JSON.parse(config);
 
 Object.keys(config).forEach(item => {
   if (process.env[item]) {
-    if (item === 'PRIVACY_POLICY') {
+    if (item === 'PRIVACY_POLICY' || item === 'AVG_GAS_PRICE_ENABLED') {
       config[item] = process.env[item] === 'true';
     } else {
       config[item] = process.env[item];

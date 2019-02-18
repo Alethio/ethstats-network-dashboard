@@ -231,7 +231,7 @@ class NodeItem extends React.Component {
           <Detail width="55px" color={colors.nameColor} data-tip data-for={`viewDetails-${shortNodeName}`}>{lastBlockUnclesCount}</Detail>
           <Counter
             nodeIsActive={data['ethstats:nodeData']['ethstats:nodeIsActive']}
-            receivedTimestamp={data['ethstats:nodeBlockData'] && data['ethstats:nodeBlockData']['ethstats:receivedTimestamp']}
+            receivedTimestamp={data['ethstats:nodeBlockData'] && data['ethstats:nodeBlockData']['ethstats:receivedTimestamp'].toString()}
             blockNumber={data['ethstats:nodeBlockData'] && parseInt(data['ethstats:nodeBlockData']['ethon:number'], 10)}
             syncBlockNumber={data['ethstats:nodeSyncInfo'] && parseInt(data['ethstats:nodeSyncInfo']['ethstats:currentBlock'], 10)}
           />

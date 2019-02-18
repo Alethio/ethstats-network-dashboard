@@ -19,6 +19,7 @@ import { loadBlockPropagation as loadBlockPropagationAction } from 'actions/bloc
 import { loadMinersTop as loadMinersTopAction } from 'actions/minersTop';
 import { loadPendingLastBlock as loadPendingLastBlockAction } from 'actions/pendingLastBlock';
 import { startTickTimer, stopTickTimer } from 'actions/global';
+import { AVG_GAS_PRICE_ENABLED } from 'config';
 
 class NetworkStatistics extends React.Component {
   componentDidMount() {
@@ -40,9 +41,11 @@ class NetworkStatistics extends React.Component {
         });
       });
     });
-    DsService.getRawRecord('pending/v2/lastBlockData').then( ( record ) => {
-      record.subscribe(this.handlePendingLastBlockSubscribe.bind(this), true);
-    });
+    if (AVG_GAS_PRICE_ENABLED) {
+      DsService.getRawRecord('pending/v2/lastBlockData').then((record) => {
+        record.subscribe(this.handlePendingLastBlockSubscribe.bind(this), true);
+      });
+    }
   }
   componentWillUnmount() {
     this.props.dispatch(stopTickTimer());
@@ -63,9 +66,11 @@ class NetworkStatistics extends React.Component {
         }
       });
     });
-    DsService.getRawRecord('pending/lastBlockData').then( ( record ) => {
-      record.unsubscribe();
-    });
+    if (AVG_GAS_PRICE_ENABLED) {
+      DsService.getRawRecord('pending/v2/lastBlockData').then((record) => {
+        record.unsubscribe();
+      });
+    }
   }
   handlePendingLastBlockSubscribe(data) {
     this.props.dispatch(loadPendingLastBlockAction(data));

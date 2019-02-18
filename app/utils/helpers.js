@@ -130,7 +130,7 @@ export function convertHashes(hashes, decimals = 2) {
   let unit = '';
 
   if(hashes !== 0 && hashes < 1000) {
-    result = hashes;
+    result = parseInt(hashes, 10);
     unit = '';
   }
 

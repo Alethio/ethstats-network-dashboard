@@ -5,5 +5,6 @@ const config = {
   DS_PASS: '',
   DS_NAMESPACE: 'ethstats/',
   EXPLORER_URL: '',
-  PRIVACY_POLICY: false
+  PRIVACY_POLICY: false,
+  AVG_GAS_PRICE_ENABLED: true
 };
