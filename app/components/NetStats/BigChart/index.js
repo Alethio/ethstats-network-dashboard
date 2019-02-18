@@ -33,6 +33,7 @@ class BigChart extends Component {
     let data = [];
     let RoundedBar;
     let min;
+    let min2;
     let max;
     let avg = 0;
     let sum = 0;
@@ -53,13 +54,13 @@ class BigChart extends Component {
         );
       };
       if (hasDomain && chartStateData) {
-        min = Math.min(...data.map(item => item[dataKey]));
+        min = min2 = Math.min(...data.map(item => item[dataKey]));
         max = Math.max(...data.map(item => item[dataKey]));
         if (min === max) {
           min = 0;
         }
         if (dataKey === 'ethstats:blockTime') {
-          minValueString = min + 's';
+          minValueString = min2 + 's';
           maxValueString = max + 's';
           sum = 0;
           for (let i = 0; i < chartStateData.length; i++) {
@@ -68,7 +69,7 @@ class BigChart extends Component {
           avg = sum / chartStateData.length;
           chartColor = '#2774FE';
         } else if (dataKey === 'ethon:blockDifficulty') {
-          minValueString = convertHashes(min, 4);
+          minValueString = convertHashes(min2, 4);
           maxValueString = convertHashes(max, 4);
           sum = new BigNumber(0);
           for (let i = 0; i < data.length; i++) {
@@ -78,7 +79,7 @@ class BigChart extends Component {
           avg = avg.toString();
           chartColor = '#EFC865';
         } else if (dataKey === 'ethon:blockGasLimit') {
-          minValueString = numberWithCommas(min) + 'gas';
+          minValueString = numberWithCommas(min2) + 'gas';
           maxValueString = numberWithCommas(max) + 'gas';
           sum = new BigNumber(0);
           for (let i = 0; i < data.length; i++) {
