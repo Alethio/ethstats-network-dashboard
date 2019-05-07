@@ -1,12 +1,13 @@
 import React from 'react';
 import Container from './Container';
+import { EXPLORER_URL } from 'config';
 
 class EthstatsLogo extends React.Component {
 
   render() {
     return (
       <Container>
-        <a href="https://ethereum.ethstats.io"
+        <a href={EXPLORER_URL}
            target="_blank"
            rel="noopener noreferrer">
           <svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">

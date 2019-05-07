@@ -2,7 +2,7 @@
 
 > EthStats - Network Monitor - Dashboard
 >
-> Front-end application for the EthStats Network Statistics tool [net.ethstats.io](https://net.ethstats.io/)
+> Front-end application for the EthStats Network Statistics tool [ethstats.io](https://ethstats.io/)
 
 A `yarn.lock` is present in the repo for flat dependencies. To install yarn on your system, run `npm install -g yarn`.
 Although `yarn` is present it's not a requirement, you can use `npm` as well.
