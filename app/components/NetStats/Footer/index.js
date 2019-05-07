@@ -28,7 +28,7 @@ class Footer extends React.Component {
         </FlexRow>
         <FlexRow>
           <Text>EthStats.io (beta) powered by </Text>
-          <AlethioLink href="https://aleth.io" target="_blank" rel="noopener noreferrer">
+          <AlethioLink href="https://company.aleth.io" target="_blank" rel="noopener noreferrer">
             <Text>&nbsp;Aleth.io</Text>
             <IconContainer><Icon name="aleth_icon"/></IconContainer>
           </AlethioLink>
