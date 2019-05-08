@@ -18,9 +18,9 @@ class PrivacyPolicy extends React.Component {
             (<span className="bold">"Alethio"</span>, <span className="bold">"Company"</span>,
             <span className="bold"> "we"</span>, <span className="bold">"our"</span>, or <span className="bold">"us"</span>)
             collects, uses, shares and stores personal information of users of this
-            website, <a href="https://net.ethstats.io/"
+            website, <a href="https://ethstats.io/"
                         target="_blank"
-                        rel="noopener noreferrer">https://net.ethstats.io/</a> (the <span className="bold">"Site"</span>). This
+                        rel="noopener noreferrer">https://ethstats.io/</a> (the <span className="bold">"Site"</span>). This
             Policy applies to the Site, applications, products and services
             (collectively, <span className="bold">"Services"</span>) on or in which it is posted, linked, or referenced.
           </p>
