@@ -227,7 +227,11 @@ class NodeItem extends React.Component {
             </ReactTooltip>
           </Detail>
           <Detail width="65px" color={colors.latencyColor} data-tip data-for={`viewDetails-${shortNodeName}`}>{latency}</Detail>
-          <Detail width="70px" color={colors.nameColor} data-tip data-for={`viewDetails-${shortNodeName}`}>{((['clique', 'ibft2'].includes(NETWORK_ALGO)) ? isValidator : mining)}</Detail>
+          <Detail width="70px" color={colors.nameColor} data-tip data-for={`viewNodeCoinbase-${shortNodeName}`}>{((['clique', 'ibft2'].includes(NETWORK_ALGO)) ? isValidator : mining)}
+            <ReactTooltip id={`viewNodeCoinbase-${shortNodeName}`} place="bottom" className="tooltip-custom">
+              <span>Address: {data['ethstats:nodeData']['ethstats:coinbase'] ? data['ethstats:nodeData']['ethstats:coinbase'] : 'N/A' }</span>
+            </ReactTooltip>
+          </Detail>
           <Detail width="50px" color={colors.nameColor} data-tip data-for={`viewDetails-${shortNodeName}`}>{peers}</Detail>
           <Detail width="160px" color={colors.blockColor} data-tip data-for={`viewDetails-${shortNodeName}`}>{lastBlock}<span className="space"/>{lastBlockHash}</Detail>
           <Detail width="75px" color={colors.nameColor} data-tip data-for={`viewDetails-${shortNodeName}`}>{lastBlockTxCount}</Detail>
