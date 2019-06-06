@@ -196,7 +196,7 @@ class Header extends React.Component {
             <Value color={colors.latencyColor}>{latency}</Value>
           </FlexItem>
           <FlexItem>
-            <Title>{((['clique', 'ibft2'].includes(NETWORK_ALGO)) ? 'Is Validator' : 'Is mining')}</Title>
+            <Title>{((['clique', 'ibft2'].includes(NETWORK_ALGO)) ? 'Is validator' : 'Is mining')}</Title>
             <Value color={colors.nameColor}>{((['clique', 'ibft2'].includes(NETWORK_ALGO)) ? isValidator : mining)}</Value>
           </FlexItem>
           <FlexItem>

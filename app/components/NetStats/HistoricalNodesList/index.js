@@ -34,7 +34,7 @@ export default class HistoricalNodesList extends React.Component {
         extraProps: {},
       }, {
         id: ((['clique', 'ibft2'].includes(NETWORK_ALGO)) ? 'isValidator' : 'isMining'),
-        name: ((['clique', 'ibft2'].includes(NETWORK_ALGO)) ? 'Is Validator' : 'Is mining'),
+        name: ((['clique', 'ibft2'].includes(NETWORK_ALGO)) ? 'Is validator' : 'Is mining'),
         width: 70,
         extraProps: {},
         ascendingOrder: true,
