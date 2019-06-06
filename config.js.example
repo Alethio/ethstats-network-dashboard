@@ -6,5 +6,6 @@ const config = {
   DS_NAMESPACE: 'ethstats/',
   EXPLORER_URL: '',
   PRIVACY_POLICY: false,
-  AVG_GAS_PRICE_ENABLED: true
+  AVG_GAS_PRICE_ENABLED: true,
+  NETWORK_ALGO: 'ethash'
 };

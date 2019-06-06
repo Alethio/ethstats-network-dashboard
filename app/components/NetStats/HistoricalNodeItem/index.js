@@ -9,7 +9,7 @@ import FlexBox from 'components/NetStats/NodeItem/FlexBox';
 import JustFlex from 'components/NetStats/NodeItem/JustFlex';
 import PaddedProp from 'components/NetStats/NodeItem/PaddedProp';
 import NodePropagationChart from 'components/NetStats/NodePropagationChart';
-
+import { NETWORK_ALGO } from 'config';
 
 class HistoricalNodeItem extends React.Component {
   static propTypes = {
@@ -181,6 +181,7 @@ class HistoricalNodeItem extends React.Component {
       peers = 'N/A',
       latency,
       uptime,
+      isValidator = 'N/A',
       mining = 'N/A',
       propAvg = 'N/A',
       lastBlock = 'N/A',
@@ -201,6 +202,7 @@ class HistoricalNodeItem extends React.Component {
       uptime = nodeData['ethstats:nodeData']['ethstats:onlineTimePercent']
         ? parseFloat(nodeData['ethstats:nodeData']['ethstats:onlineTimePercent'].toFixed(2), 10) + '%'
         : 'N/A';
+      isValidator = nodeData['ethstats:nodeData']['ethstats:nodeIsValidator'] ? 'Yes' : 'No';
       if (nodeData['ethstats:nodeStatistics']) {
         peers = nodeData['ethstats:nodeStatistics']['ethstats:numberOfPeers'];
         mining = nodeData['ethstats:nodeStatistics']['ethstats:isMining'] ? 'Yes' : 'No';
@@ -244,7 +246,7 @@ class HistoricalNodeItem extends React.Component {
             </ReactTooltip>
           </Detail>
           <Detail width="65px" color={colors.latencyColor}>{latency}</Detail>
-          <Detail width="70px" color={colors.nameColor}>{mining}</Detail>
+          <Detail width="70px" color={colors.nameColor}>{((['clique', 'ibft2'].includes(NETWORK_ALGO)) ? isValidator : mining)}</Detail>
           <Detail width="50px" color={colors.nameColor}>{peers}</Detail>
           <Detail width="160px" color={colors.blockColor}>{lastBlock}<span className="space"/>{lastBlockHash}</Detail>
           <Detail width="75px" color={colors.nameColor}>{lastBlockTxCount}</Detail>
