@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.2.0] - 2019-06-06
+- Show validators for POA networks (clique and ibft2)
+- Add NETWORK_ALGO config (values: ethash, clique, ibft2)
+- Add tooltip on isValidator/isMining to show the node address
+- Fix logos
+
 ## [1.1.6] - 2019-02-18
 - Show correct min/max values for the big charts
 - Added config AVG_GAS_PRICE_ENABLED
