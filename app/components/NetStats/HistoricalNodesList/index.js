@@ -7,6 +7,7 @@ import Header from 'components/NetStats/NodesList/Header';
 import HeaderContent from 'components/NetStats/NodesList/HeaderContent';
 import HeaderItem from 'components/NetStats/NodesList/HeaderItem';
 import SortIconContainer from 'components/NetStats/NodesList/SortIconContainer';
+import { NETWORK_ALGO } from 'config';
 
 export default class HistoricalNodesList extends React.Component {
   constructor(props) {
@@ -32,8 +33,8 @@ export default class HistoricalNodesList extends React.Component {
         ascendingOrder: true,
         extraProps: {},
       }, {
-        id: 'isMining',
-        name: 'Is mining',
+        id: ((['clique', 'ibft2'].includes(NETWORK_ALGO)) ? 'isValidator' : 'isMining'),
+        name: ((['clique', 'ibft2'].includes(NETWORK_ALGO)) ? 'Is validator' : 'Is mining'),
         width: 70,
         extraProps: {},
         ascendingOrder: true,

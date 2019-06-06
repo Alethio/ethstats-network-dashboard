@@ -11,6 +11,7 @@ import Title from './Title';
 import Value from './Value';
 import CloseIcon from '../CloseIcon';
 import FlexRow from '../FlexRow';
+import { NETWORK_ALGO } from 'config';
 
 class Header extends React.Component {
   componentDidMount() {
@@ -126,6 +127,7 @@ class Header extends React.Component {
     let colors = '';
     let type = 'N/A';
     let latency = 'N/A';
+    let isValidator = 'N/A';
     let mining = 'N/A';
     let peers = 'N/A';
     let currentBlock = 0;
@@ -145,6 +147,7 @@ class Header extends React.Component {
           type = 'N/A';
         }
         latency = realtimeData['ethstats:nodeData']['ethstats:wsLatency'] + ' ms';
+        isValidator = realtimeData['ethstats:nodeData']['ethstats:nodeIsValidator'] ? 'Yes' : 'No';
         if (realtimeData['ethstats:nodeData']['ethstats:onlineTimePercent']) {
           uptime = realtimeData['ethstats:nodeData']['ethstats:onlineTimePercent'].toFixed(2) + '%';
         }
@@ -193,8 +196,8 @@ class Header extends React.Component {
             <Value color={colors.latencyColor}>{latency}</Value>
           </FlexItem>
           <FlexItem>
-            <Title>Is mining</Title>
-            <Value color={colors.nameColor}>{mining}</Value>
+            <Title>{((['clique', 'ibft2'].includes(NETWORK_ALGO)) ? 'Is validator' : 'Is mining')}</Title>
+            <Value color={colors.nameColor}>{((['clique', 'ibft2'].includes(NETWORK_ALGO)) ? isValidator : mining)}</Value>
           </FlexItem>
           <FlexItem>
             <Title>Peers</Title>

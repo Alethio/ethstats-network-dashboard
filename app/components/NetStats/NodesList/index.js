@@ -6,6 +6,7 @@ import HeaderContent from './HeaderContent';
 import HeaderItem from './HeaderItem';
 import Icon from 'components/Icon';
 import SortIconContainer from './SortIconContainer';
+import { NETWORK_ALGO } from 'config';
 
 export default class NodesList extends React.Component {
   constructor(props) {
@@ -31,8 +32,8 @@ export default class NodesList extends React.Component {
         ascendingOrder: true,
         extraProps: {},
       }, {
-        id: 'isMining',
-        name: 'Is mining',
+        id: ((['clique', 'ibft2'].includes(NETWORK_ALGO)) ? 'isValidator' : 'isMining'),
+        name: ((['clique', 'ibft2'].includes(NETWORK_ALGO)) ? 'Is validator' : 'Is mining'),
         width: 70,
         extraProps: {},
         ascendingOrder: true,
