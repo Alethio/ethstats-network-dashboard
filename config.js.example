@@ -7,5 +7,7 @@ const config = {
   EXPLORER_URL: '',
   PRIVACY_POLICY: false,
   AVG_GAS_PRICE_ENABLED: true,
-  NETWORK_ALGO: 'ethash'
+  NETWORK_ALGO: 'ethash',
+  GOOGLE_ANALYTICS_ID: null,
+  HOTJAR_ID: null
 };

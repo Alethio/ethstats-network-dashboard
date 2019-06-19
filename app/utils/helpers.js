@@ -1,6 +1,7 @@
 import Web3 from 'web3';
 import { BigNumber }  from 'bignumber.js';
 
+import { ScriptLoader } from "@puzzl/browser/lib/network/ScriptLoader";
 
 import moment from 'moment/moment';
 import _ from 'lodash';
@@ -366,4 +367,29 @@ export function filterEventsData(data, limitTimestamp) {
   return _.filter(data, (event) => {
     return (moment(limitTimestamp).format('x') <= moment(event['ethstats:eventTimestamp']).format('x'));
   });
+}
+
+export function initHotjar(hjId) {
+  // <!-- Hotjar Tracking Code -->
+  (function(h,o,t,j,a,r){
+      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+      h._hjSettings={hjid: hjId,hjsv:6};
+      a=o.getElementsByTagName('head')[0];
+      r=o.createElement('script');r.async=1;
+      r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+      a.appendChild(r);
+  })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+}
+
+export function initGoogleAnalytics(gaId) {
+  // <!-- Global site tag (gtag.js) - Google Analytics -->
+  new ScriptLoader(document)
+      .load(`https://www.googletagmanager.com/gtag/js?id=${gaId}`)
+      .catch(e => console.error(e));
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag("js", new Date());
+
+  gtag("config", gaId);
 }
