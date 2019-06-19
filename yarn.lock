@@ -33,6 +33,18 @@
   dependencies:
     regenerator-runtime "^0.13.2"
 
+"@puzzl/browser@^1.0.0-beta.2":
+  version "1.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@puzzl/browser/-/browser-1.0.0-beta.2.tgz#560fdb555db5b9011d691e3f98f3ff86cb09dd71"
+  integrity sha512-cL7POABhKnEdWYs6fwCTba/R1/qY8MKBanos3f5G8JLIONMOiYm1TEZ0gzGEiH7lxYElzv64SjfI5UB4aLhYvw==
+  dependencies:
+    "@puzzl/core" "^1.0.0-beta.1"
+
+"@puzzl/core@^1.0.0-beta.1":
+  version "1.0.0-beta.1"
+  resolved "https://registry.yarnpkg.com/@puzzl/core/-/core-1.0.0-beta.1.tgz#a3cd197623aae5cbb3e8e6e8baa9aa1128ca275e"
+  integrity sha512-fXudtybR0LqDFk03o85GbogXYve+LxAl9cVet0nSYci58BBhU0OCZH4ft1Yc4uaii5ZZBE03N9qCAZbZdb9HLw==
+
 "@sailshq/lodash@^3.10.2":
   version "3.10.3"
   resolved "https://registry.yarnpkg.com/@sailshq/lodash/-/lodash-3.10.3.tgz#61b6fa3a5db3fe802409b0ba152bcc99e7d27a58"

@@ -17,6 +17,8 @@ import ConnectNodeModal from 'components/ConnectNodeModal';
 import CookiesBanner from 'components/CookiesBanner';
 import Container from 'components/ConnectNodeModal/Container';
 import Footer from '../../components/NetStats/Footer';
+import { GOOGLE_ANALYTICS_ID, HOTJAR_ID } from "config";
+import { initGoogleAnalytics, initHotjar } from '../../utils/helpers';
 
 const BIG_BAR_WIDTH = 8;
 const SMALL_BAR_WIDTH = 6;
@@ -64,6 +66,12 @@ class App extends React.Component {
     });
     window.addEventListener('resize', this.computeNumberOfBars);
     this.computeNumberOfBars();
+    if (GOOGLE_ANALYTICS_ID) {
+      initGoogleAnalytics(GOOGLE_ANALYTICS_ID);
+    }
+    if (HOTJAR_ID) {
+      initHotjar(HOTJAR_ID);
+    }
   }
   componentWillUnmount() {
     window.removeEventListener('resize', this.computeNumberOfBars);
