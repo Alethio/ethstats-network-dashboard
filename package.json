@@ -47,7 +47,7 @@
     "highlightjs-solidity": "^1.0.5",
     "identicon.js": "^2.2.1",
     "jazzicon": "^1.5.0",
-    "lodash": "4.17.11",
+    "lodash": "4.17.13",
     "moment": "^2.17.1",
     "polished": "^1.1.2",
     "prop-types": "^15.6.0",
