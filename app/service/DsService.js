@@ -15,7 +15,7 @@ class DsService {
       heartbeatInterval: 60000
     };
 
-    this.DS = deepstream(DS_URL, options).login({username: DS_USER, password: DS_PASS }, (success) => {
+    this.DS = deepstream(this._dsUrl(), options).login({username: DS_USER, password: DS_PASS }, (success) => {
       if (success) {
         this.success = true;
       } else {
@@ -23,6 +23,14 @@ class DsService {
       }
     });
   }
+  _dsUrl() {
+    const currentHost = location.protocol.replace('http', 'ws') + '//' + 
+                        location.hostname + 
+                        (location.port ? ':' + location.port: '');
+
+    return (DS_URL == "self" ? currentHost : DS_URL);
+  }
+
   get() {
     return this.DS;
   }
