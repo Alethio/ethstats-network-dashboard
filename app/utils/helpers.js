@@ -6,6 +6,8 @@ import { ScriptLoader } from "@puzzl/browser/lib/network/ScriptLoader";
 import moment from 'moment/moment';
 import _ from 'lodash';
 
+import { NETSTATS_API_URL } from 'config';
+
 export function trimValue(string, digits = 4) {
   string = string.replace('0x', '');
   return `${string.substr(0, digits)} ... ${string.substr(-digits)}`;
@@ -393,3 +395,12 @@ export function initGoogleAnalytics(gaId) {
 
   gtag("config", gaId);
 }
+
+export function netstatsApiUrl() {
+ const currentHost = location.protocol + '//' + 
+                     location.hostname + 
+                     (location.port ? ':' + location.port: '');
+
+ return NETSTATS_API_URL !== "self" ?  NETSTATS_API_URL : currentHost;
+}
+

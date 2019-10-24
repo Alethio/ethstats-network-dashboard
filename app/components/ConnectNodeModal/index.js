@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
-import { NETSTATS_API_URL } from 'config';
+import { netstatsApiUrl } from 'utils/helpers';
 import onClickOutside from 'react-onclickoutside';
 import PropTypes from 'prop-types';
 import { hideConnectNodeModal as hideConnectNodeModalAction} from 'actions/global';
@@ -66,7 +66,7 @@ class ConnectNodeModal extends React.Component {
         nodeName: this.state.nodeName,
         accountEmail: this.state.email,
       };
-      axios.post(`${NETSTATS_API_URL}/nodes`, user)
+      axios.post(`${netstatsApiUrl()}/nodes`, user)
         .then(res => {
           if (res.data.body.success) {
             this.setState({
