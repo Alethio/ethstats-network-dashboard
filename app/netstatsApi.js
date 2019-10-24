@@ -1,8 +1,8 @@
 import axios from 'axios';
-import { NETSTATS_API_URL } from 'config';
+import { netstatsApiUrl } from 'utils/helpers';
 
 const  axiosApiInstance = axios.create({
-  baseURL: NETSTATS_API_URL,
+  baseURL: netstatsApiUrl(),
 });
 
 export function getInitialNodeHistory(nodeName) {
