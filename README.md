@@ -1,5 +1,7 @@
 # ethstats-network-dashboard
 
+*If you're looking for the ethstats-cli look here: https://github.com/Alethio/ethstats-cli*
+
 > EthStats - Network Monitor - Dashboard
 >
 > Front-end application for the EthStats Network Statistics tool [ethstats.io](https://ethstats.io/)
