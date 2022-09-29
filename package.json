@@ -67,7 +67,7 @@
     "react-router": "^2.4.0",
     "react-router-redux": "^4.0.4",
     "react-tooltip": "^3.6.1",
-    "recharts": "^1.2.0",
+    "recharts": "^2.1.14",
     "redux": "^3.5.2",
     "redux-multi": "^0.1.12",
     "redux-thunk": "^2.2.0",
